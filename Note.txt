@@ -1,0 +1,19 @@
+geth --datadir node1 --networkid 9339 --mine --miner.etherbase 0xfdCc3CF1080e3CD3FF5fC18eb0371585F806B125 --nodiscover --syncmode full --ipcpath node1/geth.ipc --authrpc.port 8612 --port 30010  --password password.txt --unlock 0xfdCc3CF1080e3CD3FF5fC18eb0371585F806B125 --allow-insecure-unlock --ws --ws.port 8610 --ws.api eth,net,web3,personal,admin,miner --ws.origins "*" --http --http.api admin,debug,web3,eth,txpool,personal,miner,net --http.corsdomain "*" --http.port 8611 --http.addr "ipv4"
+
+geth --datadir node2 --networkid 9339 --mine --miner.etherbase 0x1Ede63b87EfE1b7D29b7091D86B895Ab8F0501F4 --nodiscover --syncmode full --ipcpath node2/geth.ipc --authrpc.port 8620 --port 30011  --password password.txt --unlock 0x1Ede63b87EfE1b7D29b7091D86B895Ab8F0501F4 --allow-insecure-unlock --ws --ws.port 8621 --ws.api eth,net,web3,personal,admin,miner --ws.origins "*" --http --http.api admin,debug,web3,eth,txpool,personal,miner,net --http.corsdomain "*" --http.port 8622 --http.addr "ipv4"
+
+geth --datadir node3 --networkid 9339 --mine --miner.etherbase 0xe4D163097Fd9C94e0A2E64d4e94ac0CfD5bb1dDc --nodiscover --syncmode full --ipcpath node3/geth.ipc --authrpc.port 8630 --port 30012  --password password.txt --unlock 0xe4D163097Fd9C94e0A2E64d4e94ac0CfD5bb1dDc --allow-insecure-unlock --ws --ws.port 8631 --ws.api eth,net,web3,personal,admin,miner --ws.origins "*" --http --http.api admin,debug,web3,eth,txpool,personal,miner,net --http.corsdomain "*" --http.port 8632 --http.addr "ipv4"
+
+
+eth.sendTransaction({to: '0x1Ede63b87EfE1b7D29b7091D86B895Ab8F0501F4',from: eth.accounts[0],value: 25000});
+eth.getBalance('0x1Ede63b87EfE1b7D29b7091D86B895Ab8F0501F4');
+
+web3.eth.accounts.signTransaction({to:'0xC259aa758e12780Ae8c8A62145cc3Cb3219198E1',value: '1000000000',gas: '2000000'},'0xbf476061def3dcae0d1da6179993f6a5826c1aeb5fd7e1e2912053c88a21f054')
+
+web3.eth.signTransaction({gasPrice: "20000000000",gas: "21000",to: '0x4D8Daee77EFaBE975C3f9F1757978683D8Cf83F0',value: "1000000000000000000",data: ""},0xbf476061def3dcae0d1da6179993f6a5826c1aeb5fd7e1e2912053c88a21f054)
+
+//interac
+geth attach http://"your ip network"
+
+//add peers
+"enode://64f47414e3cde178354f415f140aac2fbfb6f6f98ef7" tcp ip "?discport=0"
